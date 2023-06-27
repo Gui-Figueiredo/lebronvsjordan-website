@@ -1,64 +1,99 @@
+/*Font*/
 @font-face{
-	font-family: "CustomFont";
-	src: url("GothamBook.ttf") format("truetype");
+	font-family: "Gotham";
+	src: url("GothamBook.otf");
 }
 
 * {
 	box-sizing: border-box;
 }
 
+/*Body*/
+
 body {
 	margin: 0;
 	padding: 0;
+	font-family: "Gotham";
 }
 
+/*Header*/
 header {
-
 	position: fixed;
-	top: 0;
-	left: 0;
 	width: 100%;
 	background-color: transparent;
-	padding: 10px 40px;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	z-index: 999;
-	position: top;	
+	justify-content: center;
+	z-index: 10;
+	flex-flow: wrap;
 }
 
-
+/*Blue Banner Header*/
 .top-header {
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	background: linear-gradient(to right, #24242c, #44537c, black);
 }
 
+.top-header p {
+	padding: 4px;
+	display: flex;
+	margin-bottom: 10px;
+	align-items: center;
+}
+
+.top-header p:nth-child(1) {
+	font-size: 18px;
+	font-weight: bold;
+	margin-right: -5px;
+	color: white;
+}
+
+.top-header p:nth-child(2) {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	font-size: 15px;
+	color: white;
+}
+
+.top-header p:nth-child(3) {
+	font-size: 15px;
+	margin-left: 7px;
+	color: white;
+}
+
+.top-header  a, .top-header  a:visited{
+	color: white;
+	text-decoration: none;
+}
+
+/*Menu Bar + Logo*/
+
 #logo {
-	width: 150px;
-	height: auto;
-	fill: currentColor;
+	width: 120px;
+	padding-bottom: 2px;
 }
 
 nav {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	align-items: center;
-/*	z-index: 9999;*/
+	padding: 10px 40px;
+	font-weight: bolder;
 }
 
 .nav-list {
 	display: flex;
-	align-items: center;
 	gap: 30px;
-
+	margin-right: -45px;
+	list-style: none;
 }
 
 .nav-list-right{
 	display: flex;
-	align-items: center;
 	gap: 30px;
+	list-style: none;
 }
 
 .nav-item {
@@ -67,7 +102,6 @@ nav {
 	border: none;
 	border-radius: 4px;
 	font-size: 14px;
-	font-family: CustomFont;
 	cursor: pointer;
 }
 
@@ -76,36 +110,67 @@ nav {
 	color: black;
 }
 
+/* Car Images */
+
 .car-image {
 	width: 100%;
-	height: auto;
+	max-height: 100%;
 	object-fit: cover;
 }
 
 .image-section {
   position: relative;
+  height: 765px;
 }
 
-.image-section div {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+/*Text on top of images*/
+
+#Model3{
+	position: absolute;
+	top: 21%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding-top: 50px;
 }
 
-.image-section p {
+#ModelY{
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding-top: 50px;
+}
+
+#Accessories{
+	position: absolute;
+	top: 12%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding-top: 50px;
+}
+
+.image-text p {
   font-size: 15px;
-  font-family: 'CustomFont', sans-serif;
   color: black;
   margin: 0;
-  padding: 10px;
   background-color: transparent;
 }
 
-.image-section p:first-child {
+.image-text .title {
   font-weight: bold;
   font-size: 40px;
   margin-bottom: 10px;
 }
 
+/*
+add link square hover darker thing
+add menu:
+absolute to the window
+top 0
+left 100%
+transform translate -100% -> 0%	
+:hover 
+*/
